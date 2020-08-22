@@ -16,7 +16,7 @@ import com.bolsadeideas.springboot.web.app.service.UsuarioServiceApi;
 @RequestMapping(value = "/api/v2/")
 public class categoriaControllerApi {
 	
-	/*
+	
 	@Autowired
 	private CategoriaServiceApi categoServiceApi;
 	
@@ -27,6 +27,6 @@ public class categoriaControllerApi {
 		
 		
 	}
-	*/
+	
 
 }

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bolsadeideas.springboot.web.app.model.categoria;
 import com.bolsadeideas.springboot.web.app.model.usuario;
+import com.bolsadeideas.springboot.web.app.service.CategoriaServiceApi;
 import com.bolsadeideas.springboot.web.app.service.UsuarioServiceApi;
 
 @RestController
@@ -22,6 +24,9 @@ import com.bolsadeideas.springboot.web.app.service.UsuarioServiceApi;
 public class usuarioRestController {
 	@Autowired
 	private UsuarioServiceApi usoroServiceApi;
+	
+	@Autowired
+	private CategoriaServiceApi categoServiceApi;
 	
 	@GetMapping(value ="/all")
 	public List<usuario> getAll(){		
@@ -58,6 +63,17 @@ public class usuarioRestController {
 		}
 		
 		return new ResponseEntity<usuario>(usoro, HttpStatus.OK);
+	}
+	
+	
+	
+	
+	@GetMapping(value ="categoria/all")
+	public List<categoria> getAllcategoria(){		
+		
+		return categoServiceApi.getAll();
+		
+		
 	}
 
 }
